@@ -620,7 +620,12 @@ function sqimap_login ($username, $password, $imap_server_address, $imap_port, $
                 (include_once SM_PATH . 'functions/display_messages.php' );
                 sqsession_destroy();
                 /* terminate the session nicely */
-                sqimap_logout($imap_stream);
+                if(sqimap_logout($imap_stream) != FALSE){
+                    return $rst;
+                }else{
+                    return false;
+                }
+                
                 logout_error( _("Unknown user or password incorrect.") );
                 exit;
             }
