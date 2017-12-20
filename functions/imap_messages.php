@@ -1158,7 +1158,12 @@ function sqimap_messages_delete($imap_stream, $start, $end, $mailbox) {
          * turn off internal error handling (fifth argument = false) and
          * ignore copy to trash errors (allows to delete messages when overquota)
          */
-        sqimap_messages_copy ($imap_stream, $start, $end, $trash_folder, false);
+        $rst=sqimap_messages_copy ($imap_stream, $start, $end, $trash_folder, false);
+        if($rst!=NULL){
+            return $rst;
+        }else {
+            return FALSE;
+        }
     }
     sqimap_messages_flag ($imap_stream, $start, $end, "Deleted", true);
 }
