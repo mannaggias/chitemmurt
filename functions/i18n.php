@@ -20,7 +20,7 @@
 if (!defined('SM_PATH')) define('SM_PATH','../');
 
 /** Everything uses global.php... */
-require_once(SM_PATH . 'functions/global.php');
+(require_once SM_PATH . 'functions/global.php');
 
 /**
  * Wrapper for textdomain(), bindtextdomain() and
@@ -200,7 +200,7 @@ function charset_decode ($charset, $string, $force_decode=false, $save_html=fals
     $decode=fixcharset($charset);
     $decodefile=SM_PATH . 'functions/decode/' . $decode . '.php';
     if ($decode != 'index' && file_exists($decodefile)) {
-      include_once($decodefile);
+      (include_once $decodefile);
       $ret = call_user_func('charset_decode_'.$decode, $string, $save_html);
     } else {
       $ret = $string;
@@ -223,12 +223,12 @@ function charset_encode($string,$charset,$htmlencode=true) {
     $encode=fixcharset($charset);
     $encodefile=SM_PATH . 'functions/encode/' . $encode . '.php';
     if ($encode != 'index' && file_exists($encodefile)) {
-        include_once($encodefile);
+        (include_once $encodefile);
         $ret = call_user_func('charset_encode_'.$encode, $string);
     } elseif(file_exists(SM_PATH . 'functions/encode/us_ascii.php')) {
         // function replaces all 8bit html entities with question marks.
         // it is used when other encoding functions are unavailable
-        include_once(SM_PATH . 'functions/encode/us_ascii.php');
+        (include_once SM_PATH . 'functions/encode/us_ascii.php');
         $ret = charset_encode_us_ascii($string);
     } else {
         /**
@@ -1126,7 +1126,7 @@ if ($gettext_flags == 7) {
 /* If we can fake gettext, try that */
 elseif ($gettext_flags == 0) {
     $use_gettext = true;
-    include_once(SM_PATH . 'functions/gettext.php');
+    (include_once SM_PATH . 'functions/gettext.php');
 } else {
     /* Uh-ho.  A weird install */
     if (! $gettext_flags & 1) {

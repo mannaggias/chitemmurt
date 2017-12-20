@@ -15,10 +15,10 @@
 
 /**
  * Load up a bunch of SM functions */
-require_once(SM_PATH . 'functions/imap.php');
-require_once(SM_PATH . 'functions/date.php');
-require_once(SM_PATH . 'functions/mailbox_display.php');
-require_once(SM_PATH . 'functions/mime.php');
+(require_once SM_PATH . 'functions/imap.php');
+(require_once SM_PATH . 'functions/date.php');
+(require_once SM_PATH . 'functions/mailbox_display.php');
+(require_once SM_PATH . 'functions/mime.php');
 
 function sqimap_search($imapConnection, $search_where, $search_what, $mailbox,
                        $color, $search_position = '', $search_all, $count_all) {

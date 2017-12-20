@@ -116,7 +116,7 @@ function is_logged_in() {
            return;
         }
 
-        include_once( SM_PATH . 'functions/display_messages.php' );
+        (include_once SM_PATH . 'functions/display_messages.php' );
         set_up_language($squirrelmail_language, true);
         if (!$message)
             logout_error( _("You must be logged in to access this page.") );

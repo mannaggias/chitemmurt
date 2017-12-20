@@ -110,8 +110,8 @@ if (isset($_SERVER['REQUEST_URI'])) {
  * config.php $version depends on strings.php.
  * strings.php sets $PHP_SELF.
  */
-require_once(SM_PATH . 'functions/strings.php');
-require_once(SM_PATH . 'config/config.php');
+(require_once SM_PATH . 'functions/strings.php');
+(require_once SM_PATH . 'config/config.php');
 
 /**
  * Allow disabling of all plugins or enabling just a select few

@@ -13,7 +13,7 @@
  */
 
 /** UTF7 support */
-require_once(SM_PATH . 'functions/imap_utf7_local.php');
+(require_once SM_PATH . 'functions/imap_utf7_local.php');
 
 global $boxesnew;
 
@@ -253,7 +253,7 @@ function sqimap_mailbox_select ($imap_stream, $mailbox) {
      */
     if (strstr($mailbox, '../') || substr($mailbox, 0, 1) == '/') {
         global $color;
-        include_once(SM_PATH . 'functions/display_messages.php');
+        (include_once SM_PATH . 'functions/display_messages.php');
         error_box(sprintf(_("Invalid mailbox name: %s"),htmlspecialchars($mailbox)),$color);
         sqimap_logout($imap_stream);
         die('</body></html>');
@@ -605,7 +605,7 @@ function sqimap_mailbox_list($imap_stream, $force=false) {
         $inbox_in_list = false;
         $inbox_subscribed = false;
 
-        require_once(SM_PATH . 'include/load_prefs.php');
+        (require_once SM_PATH . 'include/load_prefs.php');
 
         if ($noselect_fix_enable) {
             $lsub_args = "LSUB \"$folder_prefix\" \"*%\"";

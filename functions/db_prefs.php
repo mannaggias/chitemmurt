@@ -36,9 +36,9 @@ define('SMDB_MYSQL', 1);
 /** PostgreSQL */
 define('SMDB_PGSQL', 2);
 
-if (!include_once('DB.php')) {
+if (!(include_once 'DB.php')) {
     // same error also in abook_database.php
-    require_once(SM_PATH . 'functions/display_messages.php');
+    (require_once SM_PATH . 'functions/display_messages.php');
     $error  = _("Could not include PEAR database functions required for the database backend.") . "<br />\n";
     $error .= sprintf(_("Is PEAR installed, and is the include path set correctly to find %s?"),
                         '<tt>DB.php</tt>') . "<br />\n";

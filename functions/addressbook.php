@@ -21,7 +21,7 @@ if (!defined('SM_PATH'))  {
 }
 
 /* make sure that display_messages.php is loaded */
-include_once(SM_PATH . 'functions/display_messages.php');
+(include_once SM_PATH . 'functions/display_messages.php');
 
 global $addrbook_dsn, $addrbook_global_dsn;
 
@@ -698,13 +698,13 @@ class addressbook_backend {
   logical, and should have been the way it was generated the first time.
 */
 
-require_once(SM_PATH . 'functions/abook_local_file.php');
-require_once(SM_PATH . 'functions/abook_ldap_server.php');
+(require_once SM_PATH . 'functions/abook_local_file.php');
+(require_once SM_PATH . 'functions/abook_ldap_server.php');
 
 /* Only load database backend if database is configured */
 if((isset($addrbook_dsn) && !empty($addrbook_dsn)) ||
  (isset($addrbook_global_dsn) && !empty($addrbook_global_dsn))) {
-  include_once(SM_PATH . 'functions/abook_database.php');
+  (include_once SM_PATH . 'functions/abook_database.php');
 }
 
 /*
