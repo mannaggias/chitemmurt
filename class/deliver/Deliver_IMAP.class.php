@@ -13,7 +13,7 @@
 
 /** This of course depends upon Deliver.. */
 
-require_once(SM_PATH . 'class/deliver/Deliver.class.php');
+(require_once SM_PATH . 'class/deliver/Deliver.class.php');
 
 /**
  * This class is incomplete and entirely undocumented.

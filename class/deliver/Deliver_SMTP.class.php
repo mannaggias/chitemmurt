@@ -12,7 +12,7 @@
  */
 
 /** This of course depends upon Deliver */
-require_once(SM_PATH . 'class/deliver/Deliver.class.php');
+(require_once SM_PATH . 'class/deliver/Deliver.class.php');
 
 /**
  * Deliver messages using SMTP
